@@ -12,7 +12,7 @@ const routes: Routes = [
     loadChildren: () => import('./pages/characters/characters.module').then(m => m.CharactersModule)
   },
   {
-    path: 'character/:id',
+    path: 'character/:name',
     loadChildren: () => import('./pages/details/details.module').then(m => m.DetailsModule)
   },
 ];

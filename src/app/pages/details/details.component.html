@@ -1,3 +1,7 @@
-<p>details works!</p>
+<ng-container *ngIf="character">
+    <h1> {{ character.name }}</h1>
+</ng-container>
 
-<at-quote></at-quote>
+<ng-container *ngIf="quote">
+    <at-quote [quote]="quote"></at-quote>
+</ng-container>
