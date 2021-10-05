@@ -7,16 +7,12 @@ import { throwError } from 'rxjs';
 })
 export class UtilsService {
 
-  handleResponse(res: any) {
+  handleResponse(res: any ) {
     switch (res.status) {
       case 200:
       case 201:
       case 204:
-        return res.body || 'unhandled 204 response'
-      case 202:
-        return res.body && res.body.error && res.body.error[0]
-          ? res.body.error[0]
-          : 'Unhandle 202 response'
+        return res.body || 'unhandled response'
       default:
         return this.handleError(res)
     }
