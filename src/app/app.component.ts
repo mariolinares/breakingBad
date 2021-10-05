@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { LoaderService } from './core/services/loader.service';
 
 @Component({
   selector: 'at-root',
@@ -7,4 +9,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'breakingBadApp';
+
+  loader$: Observable<boolean> = new Observable<boolean>();
+
+  constructor(
+    private loaderService: LoaderService) {
+    this.loader$ = this.loaderService.loader$;
+  }
 }
