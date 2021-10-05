@@ -5,15 +5,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AtInterceptor } from './core/interceptor/http.interceptor';
 import { HeaderComponent } from './core/components/header/header.component';
-import { QuoteComponent } from './core/components/quote/quote.component';
+import { AtInterceptor } from './core/interceptor/http.interceptor';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
