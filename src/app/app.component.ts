@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { LoaderService } from './core/services/loader.service';
 
@@ -13,7 +13,12 @@ export class AppComponent {
   loader$: Observable<boolean> = new Observable<boolean>();
 
   constructor(
-    private loaderService: LoaderService) {
-    this.loader$ = this.loaderService.loader$;
-  }
+    private loaderService: LoaderService,
+    private cdRef:ChangeDetectorRef ) {}
+
+    ngAfterViewChecked(){
+      this.loader$ = this.loaderService.loader$;
+      this.cdRef.detectChanges();
+    }
+
 }

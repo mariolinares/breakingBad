@@ -28,7 +28,7 @@ export class DetailsComponent implements OnInit {
   getDetails(name: string) {
     this.http.getDetails(name).subscribe((data) => {
       this.character = data.character[0];
-      this.quote = data.quote[0] ? data.quote[0] : data.quote;
+      this.quote = data.quote[0] ? data.quote[0] : '';
     });
   }
 }
