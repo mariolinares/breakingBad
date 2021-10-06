@@ -1,9 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, forkJoin, Observable, throwError } from 'rxjs';
-import { catchError, first, map, tap } from 'rxjs/operators';
-import { Character } from '../models/characters.interface';
-import { Quote } from '../models/quote.interface';
+import { forkJoin } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
 import { LoaderService } from './loader.service';
 import { UtilsService } from './utils.service';
 
@@ -18,9 +16,7 @@ export class HttpService {
     private http: HttpClient,
     private utils: UtilsService,
     private loaderService: LoaderService
-  ) {
-
-  }
+  ) {}
 
   getData(url: string, params?: HttpParams) {
     return this.http
@@ -42,10 +38,5 @@ export class HttpService {
       character: this.getData(`${this.API_URL}characters?name=${name}`),
       quote: this.getData(`${this.API_URL}quote/random?author=${name}`)
     })
-  }
-
-  getError(error: Error) {
-    console.log('ERROR::::::', error);
-    return throwError(error);
   }
 }
