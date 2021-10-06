@@ -1,21 +1,10 @@
-
-<mat-card class="example-card">
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>{{ character.name }}</mat-card-title>
-      <mat-card-subtitle>{{ character.portrayed }}</mat-card-subtitle>
-    </mat-card-header>
-    <div class="img-wrap">
-        <img mat-card-image [src]="character.img" alt="Photo of a Shiba Inu">
-    </div>
-<!--     <mat-card-content>
-      <ng-container *ngFor="let occupation of character.occupation; let i = index">
-          <span class="job">
-          {{ i + 1 }} - {{  occupation }}  <br/>
-          </span>
-      </ng-container>
-    </mat-card-content> -->
-    <mat-card-actions>
-      <button mat-button (click)="doAction( character )"> Ver + </button>
-    </mat-card-actions>
-  </mat-card>
+<mat-card class="example-card" (click)="doAction(character)">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>{{ character.name }}</mat-card-title>
+    <mat-card-subtitle>{{ character.portrayed }}</mat-card-subtitle>
+  </mat-card-header>
+  <div class="img-wrap">
+    <img mat-card-image [src]="character.img" alt="Photo of a Shiba Inu" />
+  </div>
+</mat-card>
