@@ -1,46 +1,53 @@
-.example-card {
+.mat-card {
+  padding: 0;
   max-width: 400px;
-}
+  border: 1px solid rgb(255, 255, 255);
 
-.example-header-image {
-  background-image: url("https://www.andiar.com/2287-thickbox_default/vinilo-heisenberg.jpg");
-  background-size: cover;
-}
+  &:hover {
+    cursor: pointer;
+    transition: all ease 0.4s;
+    border: 1px solid #d1d1d1;
+  }
 
-.img-wrap {
-    height: 260px;
+  .mat-card-header {
+    padding-top: 20px;
+    padding-left: 10px;
+
+    .mat-card-avatar {
+      background-image: url("https://www.andiar.com/2287-thickbox_default/vinilo-heisenberg.jpg");
+      background-size: cover;
+    }
+
+    .mat-card-title {
+      font-size: 15px;
+    }
+  }
+
+  .img-wrap {
+    height: 210px;
     position: relative;
     overflow: hidden;
     margin: 0;
-}
 
-.mat-card {
-    padding: 0;
-}
+    @media (min-width: 992px) { 
+        height: 260px;
+    }
+  }
 
-.mat-card-actions {
-    margin-left: 0;
-    margin-right: 0;
-    padding: 8px 0;
-}
+  .mat-card-image {
+    width: 100%;
+    margin: 0;
 
-.mat-card-header .mat-card-title {
-  font-size: 15px;
-}
+    &:first-child {
+      margin-top: 0;
+      border-top-left-radius: inherit;
+      border-top-right-radius: inherit;
+    }
 
-.example-card:hover {
-  cursor: pointer;
-  transition: all ease .4s;
-  background: rgb(241, 241, 241);
-  box-shadow: 0px 1px 8px 8px rgb(0 0 0 / 10%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
-}
-
-/* .mat-card-image {
-  width: calc(100% + 0px);
-  margin: 0 24px 46px 5px;
-} */
-
-.mat-card>:first-child, .mat-card-content>:first-child {
-    margin-top: 0;
-    padding: 20px 10px 0px 10px;
+    .mat-card-actions {
+      margin-left: 0;
+      margin-right: 0;
+      padding: 8px 0;
+    }
+  }
 }

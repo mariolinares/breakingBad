@@ -16,6 +16,6 @@ import { CardComponent } from 'src/app/core/components/card/card.component';
     CommonModule,
     CharactersRoutingModule,
     MaterialModule
-  ]
+  ],
 })
 export class CharactersModule { }

@@ -19,7 +19,6 @@ export class AtInterceptor implements HttpInterceptor {
   ): Observable<HttpEvent<any>> {
 
     this.loaderService.setLoaderStatus(true);
-
     return next.handle(req);
   }
 }

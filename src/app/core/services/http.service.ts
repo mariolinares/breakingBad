@@ -1,7 +1,9 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { forkJoin } from 'rxjs';
+import { forkJoin, Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
+import { Character } from '../models/characters.interface';
+import { Quote } from '../models/quote.interface';
 import { LoaderService } from './loader.service';
 import { UtilsService } from './utils.service';
 
@@ -9,34 +11,39 @@ import { UtilsService } from './utils.service';
   providedIn: 'root',
 })
 export class HttpService {
-  headers: HttpHeaders;
+
   API_URL: string = 'https://www.breakingbadapi.com/api/';
 
+  /**
+   * 
+   * @param http 
+   * @param utils 
+   * @param loaderService 
+   */
   constructor(
     private http: HttpClient,
     private utils: UtilsService,
     private loaderService: LoaderService
   ) {}
 
-  getData(url: string, params?: HttpParams) {
+  /**
+   * 
+   * @param url
+   * @param params 
+   */
+  getData(url: string, params?: HttpParams): Observable<any> {
     return this.http
       .get<any[]>(url, {
         observe: 'response',
         params,
-      }).pipe(
-        map(
-          (res) => this.utils.handleResponse(res),
-          catchError((err) => this.utils.handleError(err))
-        ),
+      })
+      .pipe(
+        catchError((err) => {
+          console.log(err);
+          return of(err);
+        }),
+        map((res) => this.utils.handleResponse(res)),
         tap(() => this.loaderService.setLoaderStatus(false))
       );
-  }
-
-
-  getDetails(name: string) {
-    return forkJoin({
-      character: this.getData(`${this.API_URL}characters?name=${name}`),
-      quote: this.getData(`${this.API_URL}quote/random?author=${name}`)
-    })
   }
 }
