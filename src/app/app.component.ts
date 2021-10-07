@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs';
 import { LoaderService } from './core/services/loader.service';
 
@@ -8,17 +9,23 @@ import { LoaderService } from './core/services/loader.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'breakingBadApp';
-
   loader$: Observable<boolean> = new Observable<boolean>();
 
   constructor(
     private loaderService: LoaderService,
-    private cdRef:ChangeDetectorRef ) {}
+    private cdRef: ChangeDetectorRef,
+    public translate: TranslateService
+    ) {
+    translate.addLangs(['en', 'es']);
+    translate.setDefaultLang('en');
 
-    ngAfterViewChecked(){
-      this.loader$ = this.loaderService.loader$;
-      this.cdRef.detectChanges();
-    }
+    const browserLang = translate.getBrowserLang();
+    translate.use(browserLang.match(/en|es/) ? browserLang : 'en');
+  }
+
+  ngAfterViewChecked() {
+    this.loader$ = this.loaderService.loader$;
+    this.cdRef.detectChanges();
+  }
 
 }

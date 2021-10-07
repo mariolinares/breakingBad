@@ -11,21 +11,24 @@
     </div>
     <div class="col-6">
       <div class="info">
-        <h1>{{ character.name | tilde }}</h1>
+          <span>
+            {{ 'details.name' | translate }}
+          </span>
+        <h1>{{ character.name }}</h1>
         <div class="sub">
-          <span>Status</span>
+          <span> {{ 'details.status' | translate }}</span>
           <h3>{{ character.status }}</h3>
         </div>
         <div class="sub">
-          <span>Portrayed</span>
+          <span> {{ 'details.portrayed' | translate }}</span>
           <h3>{{ character.portrayed }}</h3>
         </div>
         <div class="sub">
-          <span>Birthday</span>
-          <h3>{{ character.birthday }}</h3>
+          <span> {{ 'details.birthday' | translate }}</span>
+          <h3>{{ character.birthday}}</h3>
         </div>
         <div class="sub">
-          <span>Occupation</span>
+          <span> {{ 'details.occupation' | translate }}</span>
           <ul>
             <li *ngFor="let occupation of character.occupation">
               {{ occupation }}
@@ -33,7 +36,7 @@
           </ul>
         </div>
         <div class="sub flex-between">
-          <span>Appearance</span>
+          <span> {{ 'details.appearance' | translate }}</span>
           <div class="appearance">
             <h3 *ngFor="let appearance of character.appearance">
               {{ appearance }}

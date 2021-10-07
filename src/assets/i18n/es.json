@@ -1,0 +1,17 @@
+
+  {
+    "HOME": {
+      "TITLE": "Bonjour Angular avec ngx-translate !",
+      "SELECT": "Changer la langue"
+    },
+    "details": {
+        "name": "Nombre",
+        "nickname": "Apodo",
+        "status": "Estado",
+        "portrayed": "Representado",
+        "birthday": "Cumpleaños",
+        "occupation": "Ocupación",
+        "appearance": "Aparición"
+    }
+  }
+  

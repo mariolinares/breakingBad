@@ -1,9 +1,7 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { forkJoin, Observable, of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { Character } from '../models/characters.interface';
-import { Quote } from '../models/quote.interface';
 import { LoaderService } from './loader.service';
 import { UtilsService } from './utils.service';
 
