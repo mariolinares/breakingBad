@@ -7,7 +7,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import {MatGridListModule} from '@angular/material/grid-list';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [],
@@ -22,7 +24,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatProgressSpinnerModule,
     MatSortModule,
     MatPaginatorModule,
-    MatGridListModule
+    MatGridListModule,
+    MatButtonToggleModule,
+    MatSelectModule,
   ],
   exports: [
     MatToolbarModule,
@@ -35,7 +39,9 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatProgressSpinnerModule,
     MatSortModule,
     MatPaginatorModule,
-    MatGridListModule
+    MatGridListModule,
+    MatButtonToggleModule,
+    MatSelectModule,
   ],
 })
 export class MaterialModule {}
