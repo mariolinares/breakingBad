@@ -9,13 +9,13 @@ import { DetailsComponent } from './details.component';
 @NgModule({
   declarations: [
     DetailsComponent,
-    QuoteComponent
+    QuoteComponent,
   ],
   imports: [
     CommonModule,
     DetailsRoutingModule,
     HttpClientModule,
     SharedModule,
-  ]
+  ],
 })
 export class DetailsModule { }

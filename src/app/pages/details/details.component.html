@@ -10,40 +10,79 @@
       </ng-container>
     </div>
     <div class="col-6">
-      <div class="info">
-          <span>
-            {{ 'details.name' | translate }}
+      <div class="info container-fluid">
+        <div class="col-12 block">
+          <span class="subtitle">
+            {{ "details.name" | translate }}
           </span>
-        <h1>{{ character.name }}</h1>
-        <div class="sub">
-          <span> {{ 'details.status' | translate }}</span>
+          <h1>{{ character.name }}</h1>
+        </div>
+        <div class="col-12 block">
+          <span class="subtitle"> {{ "details.status" | translate }}</span>
           <h3>{{ character.status }}</h3>
         </div>
-        <div class="sub">
-          <span> {{ 'details.portrayed' | translate }}</span>
+        <div class="col-12 block">
+          <span class="subtitle"> {{ "details.portrayed" | translate }}</span>
           <h3>{{ character.portrayed }}</h3>
         </div>
-        <div class="sub">
-          <span> {{ 'details.birthday' | translate }}</span>
-          <h3>{{ character.birthday}}</h3>
+        <div class="col-12 block">
+          <span class="subtitle"> {{ "details.birthday" | translate }}</span>
+          <h3>{{ character.birthday | localizedDate: undefined }}</h3>
         </div>
-        <div class="sub">
-          <span> {{ 'details.occupation' | translate }}</span>
+        <div class="col-12 block">
+          <span class="subtitle"> {{ "details.occupation" | translate }}</span>
           <ul>
             <li *ngFor="let occupation of character.occupation">
               {{ occupation }}
             </li>
           </ul>
         </div>
-        <div class="sub flex-between">
-          <span> {{ 'details.appearance' | translate }}</span>
-          <div class="appearance">
-            <h3 *ngFor="let appearance of character.appearance">
-              {{ appearance }}
-            </h3>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-6 block" *ngIf="character.appearance.length > 0">
+              <span class="subtitle mb-2">
+                {{ "details.appearance" | translate }}</span
+              >
+              <div class="info__breaking_bad">
+                <div class="seasons">
+                  <span *ngFor="let appearance of character.appearance">
+                    {{ appearance }}
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-6 block"
+              *ngIf="character.better_call_saul_appearance.length > 0"
+            >
+              <span class="subtitle mb-2">
+                {{ "details.appearanceBCS" | translate }}</span
+              >
+              <div class="info__better_call_saul">
+                <div class="seasons">
+                  <span
+                    *ngFor="
+                      let appearance of character.better_call_saul_appearance
+                    "
+                  >
+                    {{ appearance }} 
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- 
+<div class="info__breaking_bad__image">
+  <img src="./../../../assets/logos/breaking-bad-logo.png" />
+</div> -->
+<!-- 
+<div class="info__better_call_saul__image">
+  <img src="./../../../assets/logos/better-call-saul.png" />
+</div> -->
