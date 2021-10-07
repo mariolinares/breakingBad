@@ -1,7 +1,46 @@
-<ng-container *ngIf="character">
-    <h1> {{ character.name }}</h1>
-</ng-container>
-
-<ng-container *ngIf="quote">
-    <at-quote [quote]="quote"></at-quote>
-</ng-container>
+<div *ngIf="character$ | async as character" class="details container" @fade>
+  <div class="row">
+    <div class="col-6 flex-right">
+      <img [src]="character.img" alt="" />
+      <h3>
+        {{ character.nickname }}
+      </h3>
+      <ng-container *ngIf="quote$ | async as quote">
+        <at-quote class="quote" [quote]="quote"></at-quote>
+      </ng-container>
+    </div>
+    <div class="col-6">
+      <div class="info">
+        <h1>{{ character.name | tilde }}</h1>
+        <div class="sub">
+          <span>Status</span>
+          <h3>{{ character.status }}</h3>
+        </div>
+        <div class="sub">
+          <span>Portrayed</span>
+          <h3>{{ character.portrayed }}</h3>
+        </div>
+        <div class="sub">
+          <span>Birthday</span>
+          <h3>{{ character.birthday }}</h3>
+        </div>
+        <div class="sub">
+          <span>Occupation</span>
+          <ul>
+            <li *ngFor="let occupation of character.occupation">
+              {{ occupation }}
+            </li>
+          </ul>
+        </div>
+        <div class="sub flex-between">
+          <span>Appearance</span>
+          <div class="appearance">
+            <h3 *ngFor="let appearance of character.appearance">
+              {{ appearance }}
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
