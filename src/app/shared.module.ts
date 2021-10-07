@@ -1,16 +1,17 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MaterialModule } from './material.module';
+import { LocalizedDatePipe } from './core/pipes/localized-date.pipe';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
 
 @NgModule({
-  declarations: [],
+  declarations: [LocalizedDatePipe],
   imports: [
     CommonModule,
     MaterialModule,
@@ -23,6 +24,6 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       isolate: false,
     }),
   ],
-  exports: [TranslateModule, MaterialModule],
+  exports: [TranslateModule, MaterialModule, LocalizedDatePipe],
 })
 export class SharedModule {}

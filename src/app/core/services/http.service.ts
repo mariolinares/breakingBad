@@ -25,7 +25,7 @@ export class HttpService {
   ) {}
 
   /**
-   * 
+   * Método para llamar a la api y filtrar las respuestas http
    * @param url
    * @param params 
    */

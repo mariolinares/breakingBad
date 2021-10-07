@@ -24,33 +24,51 @@
     width: 100%;
     display: flex;
   }
+
   .info {
     width: 100%;
-    margin-top: 40px;
+    margin-top: 20px;
+
+    .block {
+      padding: 10px 0px;
+      border-bottom: 1px dotted #035d35;
+    }
+
+    .subtitle {
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    &__breaking_bad, &__better_call_saul{
+      display: flex;
+      align-items: center;
+      img {
+        height: 53px;
+      }
+
+      .seasons {
+        span {
+          margin-top: 7px;
+          display: inline-block;
+          margin-right: 7px;
+        } 
+      }
+
+      span {
+        color: #035d3547;
+        font-size: 21px;
+        font-weight: 600;
+        margin-bottom: 0;
+      }
+    }
 
     ul {
       padding: 0 18px;
     }
 
-    .sub {
-      padding: 10px 0;
-      border-bottom: 1px solid #bfbfbf;
-      span {
-        font-weight: 600;
-      }
-
-      .appearance {
-        display: flex;
-
-        h3 {
-          margin-right: 7px !important;
-        }
-      }
-    }
 
     h1 {
       font-size: 42px;
-      line-height: 50px;
       font-weight: 600;
     }
 

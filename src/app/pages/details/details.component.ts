@@ -36,7 +36,7 @@ export class DetailsComponent implements OnInit {
     this.characterName = name.replace(replace, "+")    
     this.getDetails(this.characterName);
   }
-
+  
   /**
    * 
    * @param name String
