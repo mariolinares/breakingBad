@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { forkJoin, Observable, of } from 'rxjs';
 import { fadeAnimation } from 'src/app/core/animations/animations';
+import { Character } from 'src/app/core/models/characters.interface';
+import { Quote } from 'src/app/core/models/quote.interface';
 import { replace } from 'src/app/core/models/regex';
 import { HttpService } from 'src/app/core/services/http.service';
 
@@ -14,8 +17,8 @@ import { HttpService } from 'src/app/core/services/http.service';
 })
 export class DetailsComponent implements OnInit {
   characterName: string;
-  character$: Observable<any>;
-  quote$: Observable<any>;
+  character$: Observable<Character>;
+  quote$: Observable<Quote>;
   API_URL: string = 'https://www.breakingbadapi.com/api/';
 
   /**
@@ -24,7 +27,8 @@ export class DetailsComponent implements OnInit {
    */
   constructor(
     private activatedRoute: ActivatedRoute,
-    private http: HttpService
+    private http: HttpService,
+    public translate: TranslateService
   ) {}
 
   ngOnInit(): void {
