@@ -2,7 +2,8 @@
 @import '../node_modules/bootstrap-4-grid/css/grid.min.css';
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, sans-serif; }
+
 
 .loader{
     position: fixed;
@@ -13,4 +14,16 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     align-items: center;
     justify-content: center;
     background: #ffffffda;
+}
+
+.quote {
+    position: absolute;
+    left: 20px;
+    bottom: 50px;
+    font-size: 23px;
+    color: #fff;
+
+    p {
+        width: 70%;
+    }
 }
