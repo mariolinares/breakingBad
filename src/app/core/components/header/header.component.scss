@@ -13,21 +13,23 @@
         margin: 0 !important;
     }
 
-    img {
-        height: 70px;
+    .logo {
+        img {
+            height: 70px;
+        }
     }
 }
 
 .leng {
     position: absolute;
     right: 30px;
-    .flag-icon {
-        font-size: 21px;
+
+    img.flag {
+            height: 35px !important;
     }
 
     .active {
         position: relative;
-        background-color: #000;
         opacity: 0.5;
     }
 }

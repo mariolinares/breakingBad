@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/bootstrap-4-grid/css/grid.min.css';
-@import '../node_modules/flag-icon-css/css/flag-icon.min.css';
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, sans-serif; }
@@ -16,7 +15,6 @@ body { margin: 0; font-family: Roboto, sans-serif; }
     align-items: center;
     justify-content: center;
     background: #ffffffda;
-    
 }
 
 .quote {

@@ -5,11 +5,11 @@
 
     <div class="leng">
         <button [disabled]="translate.currentLang === 'en'" (click)="translate.use('en')" mat-icon-button aria-label="GB">
-            <span class="flag-icon flag-icon-gb" [class.active]="translate.currentLang !== 'en'"></span>
+            <img src="../../../../assets/flags/united-kingdom.png" class="flag" [class.active]="translate.currentLang !== 'en'" />
         </button>
 
         <button [disabled]="translate.currentLang === 'es'" (click)="translate.use('es')" mat-icon-button aria-label="ES">
-            <span class="flag-icon flag-icon-es" [class.active]="translate.currentLang !== 'es'"></span>
+            <img src="../../../../assets/flags/spain.png" class="flag" [class.active]="translate.currentLang !== 'es'" />
         </button>
     </div>
 </div>

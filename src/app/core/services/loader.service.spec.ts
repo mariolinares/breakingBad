@@ -13,4 +13,11 @@ describe('LoaderService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
+
+  it('should be created', () => {
+    const spy = spyOn(service.loader, 'next');
+    service.setLoaderStatus(true)
+    expect(spy).toHaveBeenCalled()
+  });
+
 });

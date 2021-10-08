@@ -9,7 +9,6 @@ export class UtilsService {
 
 
   handleResponse(res: any ) {
-    console.log(res)
     switch (res.status) {
       case 200:
       case 201:
