@@ -14,6 +14,7 @@ import { AtInterceptor } from './core/interceptor/http.interceptor';
 import { SharedModule } from './shared.module';
 import localeEn from '@angular/common/locales/en';
 import localeEs from '@angular/common/locales/es';
+import { ToastrModule } from 'ngx-toastr';
 
 registerLocaleData(localeEs, 'es');
 registerLocaleData(localeEn, 'en');
@@ -34,6 +35,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     MatProgressSpinnerModule,
     HttpClientModule,
     ReactiveFormsModule,
+    ToastrModule.forRoot(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -41,7 +43,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
         deps: [HttpClient]
       }
     }),
-    SharedModule
+    SharedModule,
+    
   ],
   providers: [
     {  
