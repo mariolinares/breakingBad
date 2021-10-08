@@ -5,6 +5,7 @@ import { listAnimation } from 'src/app/core/animations/animations';
 import { Character } from 'src/app/core/models/characters.interface';
 import { changeURL } from 'src/app/core/models/regex';
 import { HttpService } from 'src/app/core/services/http.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'at-characters',
@@ -17,11 +18,6 @@ import { HttpService } from 'src/app/core/services/http.service';
 export class CharactersComponent implements OnInit {
   characters$: Observable<Character[]>;
 
-  /**
-   * 
-   * @param httpService HttpService
-   * @param router 
-   */
   constructor(
     private httpService: HttpService, 
     private router: Router,
@@ -30,11 +26,13 @@ export class CharactersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.characters$ = this.httpService.getData(
-      'https://www.breakingbadapi.com/api/characters'
-    );
+    this.characters$ = this.httpService.getData(`${environment.API_URL}characters`)
   }
 
+  /**
+   * 
+   * @param character 
+   */
   goToDetails(character: Character) {
     this.router.navigate(['/character/' + character.name.replace(changeURL, "_")]);
   }
