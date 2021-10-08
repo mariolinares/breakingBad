@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap-4-grid/css/grid.min.css';
+@import '~ngx-toastr/toastr';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, sans-serif; }
+
+
+.loader{
+    position: fixed;
+    z-index: 12;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #ffffffda;
+}
+
+.quote {
+    position: absolute;
+    left: 20px;
+    bottom: 50px;
+    font-size: 23px;
+    color: #fff;
+
+    p {
+        width: 70%;
+        color: white;
+        background: #035d35;
+        padding: 10px;
+        min-width: 130px;
+    }
+}

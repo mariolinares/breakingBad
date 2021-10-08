@@ -1,0 +1,15 @@
+<div class="header">
+    <div class="logo">
+        <img src="https://logosvector.net/wp-content/uploads/2012/10/breaking-bad-logo-vector.png">
+    </div>
+
+    <div class="leng">
+        <button [disabled]="translate.currentLang === 'en'" (click)="translate.use('en')" mat-icon-button aria-label="GB">
+            <img src="../../../../assets/flags/united-kingdom.png" class="flag" [class.active]="translate.currentLang !== 'en'" />
+        </button>
+
+        <button [disabled]="translate.currentLang === 'es'" (click)="translate.use('es')" mat-icon-button aria-label="ES">
+            <img src="../../../../assets/flags/spain.png" class="flag" [class.active]="translate.currentLang !== 'es'" />
+        </button>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<mat-card class="card" (click)="doAction(character)">
+  <mat-card-header>
+    <div mat-card-avatar class="header-image"></div>
+    <mat-card-title>{{ character.name }}</mat-card-title>
+    <mat-card-subtitle>{{ character.portrayed }}</mat-card-subtitle>
+  </mat-card-header>
+  <div class="img-wrap">
+    <img mat-card-image [src]="character.img" [alt]="character.name" />
+  </div>
+</mat-card>

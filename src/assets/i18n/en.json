@@ -1,0 +1,18 @@
+{
+    "HOME": {
+      "TITLE": "Hello Angular with ngx-translate!",
+      "SELECT": "Change language"
+    }, 
+    "details": {
+        "name": "Name",
+        "nickname": "Nickname",
+        "status": "Status",
+        "portrayed": "Portrayed",
+        "birthday": "Birthday",
+        "occupation": "Occupation",
+        "appearance": "Breaking Bad seassons",
+        "appearanceBCS": "Better Call Saul seassons",
+        "goBack": "Go Back"
+      }
+  }
+  

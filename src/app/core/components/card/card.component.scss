@@ -1,0 +1,53 @@
+.mat-card {
+  padding: 0;
+  max-width: 400px;
+  border: 1px solid rgb(255, 255, 255);
+
+  &:hover {
+    cursor: pointer;
+    transition: all ease 0.4s;
+    border: 1px solid #d1d1d1;
+  }
+
+  .mat-card-header {
+    padding-top: 20px;
+    padding-left: 10px;
+
+    .mat-card-avatar {
+      background-image: url("https://www.andiar.com/2287-thickbox_default/vinilo-heisenberg.jpg");
+      background-size: cover;
+    }
+
+    .mat-card-title {
+      font-size: 15px;
+    }
+  }
+
+  .img-wrap {
+    height: 210px;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+
+    @media (min-width: 992px) { 
+        height: 260px;
+    }
+  }
+
+  .mat-card-image {
+    width: 100%;
+    margin: 0;
+
+    &:first-child {
+      margin-top: 0;
+      border-top-left-radius: inherit;
+      border-top-right-radius: inherit;
+    }
+
+    .mat-card-actions {
+      margin-left: 0;
+      margin-right: 0;
+      padding: 8px 0;
+    }
+  }
+}

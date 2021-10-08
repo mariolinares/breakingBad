@@ -1,0 +1,35 @@
+.header {
+    background: #fffffff0;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 75px;
+    position: fixed;
+    width: 100%;
+    z-index: 9;
+
+    h1 {
+        margin: 0 !important;
+    }
+
+    .logo {
+        img {
+            height: 70px;
+        }
+    }
+}
+
+.leng {
+    position: absolute;
+    right: 30px;
+
+    img.flag {
+            height: 35px !important;
+    }
+
+    .active {
+        position: relative;
+        opacity: 0.5;
+    }
+}
