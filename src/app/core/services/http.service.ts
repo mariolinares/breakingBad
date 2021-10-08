@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
+import { ErrorService } from './error.service';
 import { LoaderService } from './loader.service';
 import { UtilsService } from './utils.service';
 
@@ -9,8 +10,6 @@ import { UtilsService } from './utils.service';
   providedIn: 'root',
 })
 export class HttpService {
-
-  API_URL: string = 'https://www.breakingbadapi.com/api/';
 
   /**
    * 
@@ -21,7 +20,8 @@ export class HttpService {
   constructor(
     private http: HttpClient,
     private utils: UtilsService,
-    private loaderService: LoaderService
+    private loaderService: LoaderService,
+    private errorService: ErrorService
   ) {}
 
   /**
@@ -37,11 +37,12 @@ export class HttpService {
       })
       .pipe(
         catchError((err) => {
-          console.log(err);
+          this.errorService.printError(err)
           return of(err);
         }),
-        map((res) => this.utils.handleResponse(res)),
-        tap(() => this.loaderService.setLoaderStatus(false))
+        map(
+          (res) => this.utils.handleResponse(res)),
+          tap(() => this.loaderService.setLoaderStatus(false))
       );
   }
 }
