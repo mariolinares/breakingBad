@@ -1,20 +1,22 @@
 import { CommonModule, registerLocaleData } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MaterialModule } from './material.module';
-import { LocalizedDatePipe } from './core/pipes/localized-date.pipe';
+import { ErrorInterceptor } from './core/interceptor/error.interceptor';
+import { ToastrModule } from 'ngx-toastr';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient);
 }
 
 @NgModule({
-  declarations: [LocalizedDatePipe],
+
   imports: [
     CommonModule,
     MaterialModule,
+    ToastrModule.forRoot(),
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
@@ -24,6 +26,13 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       isolate: false,
     }),
   ],
-  exports: [TranslateModule, MaterialModule, LocalizedDatePipe],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrorInterceptor,
+      multi: true
+    }
+  ],
+  exports: [TranslateModule, MaterialModule],
 })
 export class SharedModule {}

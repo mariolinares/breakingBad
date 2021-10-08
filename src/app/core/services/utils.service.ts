@@ -7,9 +7,7 @@ import { of } from 'rxjs';
 })
 export class UtilsService {
 
-
   handleResponse(res: any ) {
-    console.log(res)
     switch (res.status) {
       case 200:
       case 201:
@@ -22,10 +20,9 @@ export class UtilsService {
 
   /**
    * La api siempre regresa un status 200 y por lo tanto no se pueden gestionar las respuestas correctamente.
-   * Deprecated
-   * @deprecated
    * @param error 
    */
+
   handleError(error: HttpErrorResponse) {
     return of(error);
   }

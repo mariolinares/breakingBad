@@ -16,6 +16,13 @@ describe('QuoteComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(QuoteComponent);
     component = fixture.componentInstance;
+
+    component.quote = {
+      quote_id: 1,
+      quote: 'Quote',
+      author: 'Mario Linares', 
+      series: 'breaking bad'
+    }
     fixture.detectChanges();
   });
 

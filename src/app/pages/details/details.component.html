@@ -27,7 +27,7 @@
         </div>
         <div class="col-12 block">
           <span class="subtitle"> {{ "details.birthday" | translate }}</span>
-          <h3>{{ character.birthday | localizedDate: undefined }}</h3>
+          <h3>{{ character.birthday }}</h3>
         </div>
         <div class="col-12 block">
           <span class="subtitle"> {{ "details.occupation" | translate }}</span>
@@ -74,6 +74,13 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 text-center mt-5">
+      <button mat-button color="link" (click)="goBack()"> 
+        <mat-icon aria-hidden="false" aria-label="Navigate before">navigate_before</mat-icon>
+        {{ "details.goBack" | translate }} </button>
     </div>
   </div>
 </div>
