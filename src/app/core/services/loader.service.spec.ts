@@ -14,7 +14,7 @@ describe('LoaderService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('should be created', () => {
+  it('call setLoaderStatus and set observable', () => {
     const spy = spyOn(service.loader, 'next');
     service.setLoaderStatus(true)
     expect(spy).toHaveBeenCalled()
