@@ -12,7 +12,9 @@
         "birthday": "Cumpleaños",
         "occupation": "Ocupación",
         "appearance": "Temp. Breaking Bad",
-        "appearanceBCS": "Temp. Better Call Saul"
+        "appearanceBCS": "Temp. Better Call Saul",
+        "goBack": "Volver"
+
     }
   }
   
